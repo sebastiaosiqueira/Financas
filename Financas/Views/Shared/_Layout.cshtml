@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+
+   @Html.Partial("_MenuSuperior")
+    <div class="container">
+        <main class="col-sm-8">
+            @RenderBody()
+        </main>
+        <aside class="col-sm-4">
+            <h3>Acesso Rapido</h3>
+            <ul>
+                <li>@Html.ActionLink("Mvimentacoes Por usuario", "MovimentacoesPorUsuario", "Movimentacao")</li>
+                <li>@Html.ActionLink("Busca de movimentacoes", "Busca", "Movimentacao")</li>
+            </ul>
+        </aside>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
